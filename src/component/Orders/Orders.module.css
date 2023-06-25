@@ -1,0 +1,33 @@
+.orders {
+  max-width: 60rem;
+  width: 90%;
+  margin: -2rem auto;
+  animation: orders-appear 1s ease-out forwards;
+}
+
+.orders ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@keyframes orders-appear {
+  from {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.orders-loading {
+  text-align: center;
+  color: white;
+}
+
+.orders-error {
+  text-align: center;
+  color: rgb(255, 0, 0);
+}

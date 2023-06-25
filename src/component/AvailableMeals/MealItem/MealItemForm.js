@@ -23,20 +23,7 @@ const MealItemForm = (props) => {
 
   return (
     <form className={styles.form} onSubmit={submitHandler}>
-      <Input
-        ref={amountInputRef}
-        label="Amount"
-        input={{
-          id: "amount",
-          min: "1",
-          max: "5",
-          step: "1",
-          type: "number",
-          defaultValue: "1",
-        }}
-      />
-      <button type="submit">+ Add</button>
-      {!amountIsValid && <p>Please enter a valid amount (1-5)</p>}
+      <button type="submit">Remove {props.foodName} </button>
     </form>
   );
 };

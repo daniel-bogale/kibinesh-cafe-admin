@@ -2,6 +2,7 @@ import styles from "./AvailableMeals.module.css";
 import Card from "../UI/Card";
 import MealItem from "./MealItem/MealItem";
 import { useEffect, useState } from "react";
+
 const DUMMY_MEALS = [
   {
     id: "m1",
@@ -120,6 +121,7 @@ const AvailableMeals = () => {
   return (
     <section className={styles.meals}>
       <Card>
+        <h2>All Kibinesh Meals</h2>
         <ul>{mealsList}</ul>
       </Card>
     </section>
