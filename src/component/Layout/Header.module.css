@@ -56,7 +56,6 @@ nav a:hover,
 nav a:active,
 nav a.active {
   color: white;
-  padding-bottom: 0.25rem;
   border-bottom: 4px solid white;
   font-weight: 700;
 }
