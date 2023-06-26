@@ -1,5 +1,9 @@
 import styles from "./OrderedItem.module.css";
 const OrderedItem = (props) => {
+  const totalPrice = props.userOrders
+    .reduce((total, order) => total + order.amount * order.price, 0)
+    .toFixed(2);
+
   const orderedDetail = props.userOrders.map((orders) => (
     <div className={styles["order-detail"]}>
       <div key={orders.name} className={styles.flex}>
@@ -27,6 +31,16 @@ const OrderedItem = (props) => {
           <h3>Phone No</h3>
           <h3>{props.user.phoneNumber}</h3>
         </div>
+        <div className={styles.flex}>
+          <h3>Price</h3>
+          <h3>{totalPrice}Birr</h3>
+        </div>
+        <button
+          onClick={props.onServed.bind(this, props.id)}
+          className={styles.button}
+        >
+          Served
+        </button>
       </section>
     </li>
   );

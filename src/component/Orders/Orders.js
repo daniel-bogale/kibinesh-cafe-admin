@@ -5,6 +5,11 @@ import OrderedItem from "./IndividualOrder/OrderedItem";
 
 const Orders = (props) => {
   const [orders, setOrders] = useState([]);
+
+  const onServedHandler = (id) => {
+    console.log(id);
+  };
+
   useEffect(() => {
     let url =
       "https://react-first-38e92-default-rtdb.firebaseio.com/orders.json";
@@ -41,7 +46,7 @@ const Orders = (props) => {
     getOrders();
     setInterval(() => {
       getOrders();
-    }, 5000);
+    }, 1000);
   }, []);
 
   const sortedOrders = orders.sort(function (a, b) {
@@ -50,9 +55,11 @@ const Orders = (props) => {
   const ordersList = sortedOrders.map((order) => (
     <Card>
       <OrderedItem
+        id={order.key}
         key={order.key}
         userOrders={order.orderedItems}
         user={order.user}
+        onServed={onServedHandler}
       >
         list
       </OrderedItem>
