@@ -65,12 +65,9 @@ h1 {
   margin-bottom: 0rem;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
   .header {
     padding: 0 7%;
     height: 7.5rem;
   }
-  /* .header h1 {
-    font-size: 1.8rem;
-  } */
 }

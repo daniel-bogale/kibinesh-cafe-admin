@@ -6,30 +6,37 @@ import { useEffect, useState } from "react";
 const DUMMY_MEALS = [
   {
     id: "m1",
-    name: "Sushi",
-    description: "Finest fish and veggies",
-    price: 22.99,
+    name: "ሽሮ ፈሰስ",
+    description: "ጥሩ ቀይ የፆም ምግብ",
+    price: 40,
     averageCookingTime: 30,
   },
   {
     id: "m2",
-    name: "Schnitzel",
-    description: "A german specialty!",
+    name: "ተጋቢኖ",
+    description: "ስፔሻል የፆም ምግብ",
     price: 16.5,
     averageCookingTime: 40,
   },
   {
     id: "m3",
-    name: "Barbecue Burger",
-    description: "American, raw, meaty",
-    price: 12.99,
+    name: "የፆም ፍርፍር",
+    description: "ጥሩ ቀይ የፆም ምግብ",
+    price: 40,
     averageCookingTime: 50,
   },
   {
     id: "m4",
-    name: "Green Bowl",
-    description: "Healthy...and green...",
-    price: 18.99,
+    name: "የፍስክ ፍርፍር",
+    description: "ጥሩ ቀይ የፍስክ ምግብ",
+    price: 40,
+    averageCookingTime: 20,
+  },
+  {
+    id: "m5",
+    name: "ምስር",
+    description: "ጥሩ ቀይ የፆም ምግብ",
+    price: 40,
     averageCookingTime: 20,
   },
 ];
@@ -40,6 +47,7 @@ const AvailableMeals = () => {
   const [httpError, setHttpError] = useState();
 
   // one time code
+
   useEffect(() => {
     const postMeals = async () => {
       try {
