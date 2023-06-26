@@ -59,10 +59,7 @@ const Orders = (props) => {
 
     setInterval(() => {
       getOrders(url1);
-
       getOrders(url2, false);
-      console.log(orders);
-      console.log(servedOrders);
     }, 3000);
   }, []);
 
@@ -71,7 +68,7 @@ const Orders = (props) => {
       first = false;
       return;
     }
-    if (revisedOrders.length === 0 || orders.length === 0) {
+    if (revisedOrders.length === 0) {
       return;
     }
     setOrders(revisedOrders);
