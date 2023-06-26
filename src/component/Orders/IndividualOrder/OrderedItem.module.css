@@ -25,6 +25,7 @@ h2 {
 }
 
 .button {
+  margin-top: 1rem;
   font: inherit;
   cursor: pointer;
   background-color: #8a2b06;
