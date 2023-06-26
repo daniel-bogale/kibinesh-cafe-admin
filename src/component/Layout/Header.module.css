@@ -38,7 +38,6 @@ nav {
   gap: 0.5rem;
   list-style-type: none;
   width: 100%;
-  transition: all 0.5s;
   text-align: center;
 }
 nav li {
@@ -51,6 +50,7 @@ nav a {
   text-decoration: none;
   font-size: 1.2rem;
   font-weight: 400;
+  transition: all 0.15s ease-out;
 }
 
 nav a:hover,
