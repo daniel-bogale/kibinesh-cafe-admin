@@ -11,7 +11,8 @@
   justify-content: center;
   align-items: center;
   gap: 5px;
-  padding: 0 10%;
+  padding: 0 25%;
+
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
   z-index: 10;
 }
@@ -64,12 +65,12 @@ h1 {
   margin-bottom: 0rem;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 800px) {
   .header {
-    padding: 0 2%;
+    padding: 0 7%;
     height: 7.5rem;
   }
-  .header h1 {
-    font-size: 1.2rem;
-  }
+  /* .header h1 {
+    font-size: 1.8rem;
+  } */
 }
