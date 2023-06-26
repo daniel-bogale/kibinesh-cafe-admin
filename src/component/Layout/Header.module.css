@@ -34,12 +34,15 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 0.5rem;
   list-style-type: none;
   width: 100%;
   transition: all 0.5s;
+  text-align: center;
 }
 nav li {
-  margin-left: 1rem;
+  margin: 0;
+  padding: 0;
 }
 
 nav a {
@@ -63,7 +66,10 @@ h1 {
 }
 
 @media (max-width: 700px) {
+  .header {
+    padding: 0 2%;
+  }
   .header h1 {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 }
