@@ -5,8 +5,8 @@ const OrderedItem = (props) => {
     .toFixed(2);
 
   const orderedDetail = props.userOrders.map((orders) => (
-    <div className={styles["order-detail"]}>
-      <div key={orders.name} className={styles.flex}>
+    <div key={orders.name} className={styles["order-detail"]}>
+      <div className={styles.flex}>
         <h3>{orders.name}</h3>
         <h3>x{orders.amount}</h3>
       </div>
@@ -35,12 +35,14 @@ const OrderedItem = (props) => {
           <h3>Price</h3>
           <h3>{totalPrice}Birr</h3>
         </div>
-        <button
-          onClick={props.onServed.bind(this, props.id)}
-          className={styles.button}
-        >
-          Served
-        </button>
+        {props.type !== "served" && (
+          <button
+            onClick={props.onServed.bind(this, props.id)}
+            className={styles.button}
+          >
+            Served
+          </button>
+        )}
       </section>
     </li>
   );
