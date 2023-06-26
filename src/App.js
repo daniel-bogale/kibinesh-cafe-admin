@@ -6,8 +6,8 @@ function App() {
     <>
       <Header />
       <main>
-        <Orders />
-        {/* <Orders served={true} /> */}
+        {/* <Orders /> */}
+        <Orders served={true} />
 
         {/* <AvailableMeals /> */}
       </main>

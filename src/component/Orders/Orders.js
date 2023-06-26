@@ -4,7 +4,6 @@ import styles from "./Orders.module.css";
 import OrderedItem from "./IndividualOrder/OrderedItem";
 
 let first = true;
-let firstServed = true;
 const Orders = (props) => {
   const [orders, setOrders] = useState([]);
   const [revisedOrders, setRevisedOrders] = useState(orders);
@@ -27,7 +26,6 @@ const Orders = (props) => {
 
     if (props?.served) {
       console.log("props is served");
-
       url =
         "https://react-first-38e92-default-rtdb.firebaseio.com/servedOrders.json";
     }
@@ -49,6 +47,9 @@ const Orders = (props) => {
           });
         }
 
+        if (props?.served) {
+          setServedOrders(ordersList);
+        }
         setOrders(ordersList);
       } catch (err) {
         console.log(err, "error");
