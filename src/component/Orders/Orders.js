@@ -21,15 +21,12 @@ const Orders = (props) => {
   };
 
   useEffect(() => {
-    let url =
+    const url1 =
       "https://react-first-38e92-default-rtdb.firebaseio.com/orders.json";
 
-    if (props?.served) {
-      console.log("props is served");
-      url =
-        "https://react-first-38e92-default-rtdb.firebaseio.com/servedOrders.json";
-    }
-    const getOrders = async () => {
+    const url2 =
+      "https://react-first-38e92-default-rtdb.firebaseio.com/servedOrders.json";
+    const getOrders = async (url, order = true) => {
       try {
         const response = await fetch(url);
         if (!response.ok) {
@@ -47,25 +44,34 @@ const Orders = (props) => {
           });
         }
 
-        if (props?.served) {
+        if (!order) {
           setServedOrders(ordersList);
+        } else {
+          setOrders(ordersList);
         }
-        setOrders(ordersList);
       } catch (err) {
         console.log(err, "error");
       }
     };
 
-    getOrders();
+    getOrders(url1);
+    getOrders(url2, false);
 
-    // setInterval(() => {
-    //   getOrders();
-    // }, 1000);
+    setInterval(() => {
+      getOrders(url1);
+
+      getOrders(url2, false);
+      console.log(orders);
+      console.log(servedOrders);
+    }, 3000);
   }, []);
 
   useEffect(() => {
     if (first) {
       first = false;
+      return;
+    }
+    if (revisedOrders.length === 0 || orders.length === 0) {
       return;
     }
     setOrders(revisedOrders);
