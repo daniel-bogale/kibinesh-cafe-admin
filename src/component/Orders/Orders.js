@@ -4,6 +4,7 @@ import styles from "./Orders.module.css";
 import OrderedItem from "./IndividualOrder/OrderedItem";
 
 let first = true;
+
 const Orders = (props) => {
   const [orders, setOrders] = useState([]);
   const [revisedOrders, setRevisedOrders] = useState(orders);
@@ -17,6 +18,7 @@ const Orders = (props) => {
     setServedOrders(allServedOrders);
 
     const revisedOrders = orders.filter((order) => order.key !== id);
+
     setRevisedOrders(revisedOrders);
   };
 
@@ -37,7 +39,7 @@ const Orders = (props) => {
 
         for (const key in responseData) {
           ordersList.push({
-            key: key,
+            key: Math.floor(Math.random() * 10000),
             orderedItems: responseData[key].orderedItems,
             user: responseData[key].user,
             time: responseData[key].time,
@@ -68,9 +70,15 @@ const Orders = (props) => {
       first = false;
       return;
     }
-    if (revisedOrders.length === 0) {
+
+    if (
+      revisedOrders.length === 0 &&
+      servedOrders.length === 0 &&
+      orders.length === 0
+    ) {
       return;
     }
+
     setOrders(revisedOrders);
 
     const postServedOrders = async () => {
@@ -140,8 +148,8 @@ const Orders = (props) => {
         {props?.served && <h2>All Served Orders</h2>}
       </Card>
 
-      <ul>{orders.length > 0 && contentAjx}</ul>
-      {orders.length === 0 && (
+      <ul>{sortedListContent.length > 0 && contentAjx}</ul>
+      {sortedListContent.length === 0 && (
         <Card>
           <p>There is no order for now</p>
         </Card>
