@@ -10,6 +10,7 @@ const MealItem = (props) => {
         <div className={styles.description}>{props.description}</div>
         <div className={styles.price}>{price}</div>
       </div>
+      <button className={styles.button}>minimize</button>
       {/* <MealItemForm onAddToCart={addToCartHandler} foodName={props.name} /> */}
     </li>
   );
