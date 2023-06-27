@@ -39,7 +39,7 @@ const Orders = (props) => {
 
         for (const key in responseData) {
           ordersList.push({
-            key: Math.floor(Math.random() * 10000),
+            key: responseData[key].key,
             orderedItems: responseData[key].orderedItems,
             user: responseData[key].user,
             time: responseData[key].time,
